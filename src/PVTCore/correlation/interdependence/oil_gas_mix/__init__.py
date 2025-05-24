@@ -1,0 +1,3 @@
+from .formation_volume_factor import OilInContactWithGasVolumeFactorCorrelation
+from .solubility import OilInContactWithGasSolubilityCorrelation
+from .viscosity import OilInContactWithGasViscosityCorrelation
