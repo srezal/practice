@@ -2,10 +2,10 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY ./requirements.txt .
+COPY ./pyproject.toml .
 
-RUN pip install --no-cache -r requirements.txt
+RUN pip install poetry && poetry install --no-root
 
 COPY ./src ./src
 
-CMD ["fastapi", "dev", "--host", "0.0.0.0", "src/main.py"]
+CMD ["poetry", "run", "fastapi", "dev", "--host", "0.0.0.0", "src/main.py"]
